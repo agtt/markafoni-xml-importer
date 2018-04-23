@@ -24,10 +24,10 @@ class Integration extends Model
 	protected $dates = ['deleted_at'];
 
 	public function suppliers(){
-		return $this->hasOne('App\Models\Supplier', 'id');
+		return $this->belongsTo('App\Models\Supplier', 'supplier','id');
 	}
 	
 	public function crontabs(){
-		return $this->hasOne('App\Models\Crontab', 'id');
+		return $this->belongsTo('App\Models\Crontab', 'crontab','id');
 	}
 }
